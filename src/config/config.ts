@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 
-dotenv.config();
 
 type TConfig = {
 
@@ -18,14 +17,21 @@ type AppConfig = {
     PORT: string | number;
 };
 
-const ENV = process.env.NODE_ENV ?? "development";
+if(process.env.NODE_ENV === 'production'){
+    dotenv.config({path: '.env.production'});
+} else {
+    dotenv.config({path: '.env.development'})
+}
+
+const ENV = process.env.NODE_ENV ?? 'development';
+
 
 const CONFIG:TConfig = {
 
    development : {
 
     app: {
-        PORT: process.env.PORT || 3001
+        PORT: process.env.PORT || 5001
     }
 
    },
@@ -34,7 +40,7 @@ const CONFIG:TConfig = {
 
     app: {
 
-        PORT: process.env.PORT || 3001
+        PORT: process.env.PORT || 5001
     }
    }
 }
