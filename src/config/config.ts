@@ -6,10 +6,10 @@ type TConfig = {
     [Key: string]: EnvironmentConfig;
 };
 
-type EnvironmentConfig =  {
+type EnvironmentConfig = {
 
-db: mongoDBconfig;
-app : AppConfig
+    db: mongoDBconfig;
+    app: AppConfig
 
 };
 
@@ -21,43 +21,42 @@ type AppConfig = {
 type mongoDBconfig = {
 
     URI: string
-}; 
+};
 
-if(process.env.NODE_ENV === 'production'){
-    dotenv.config({path: '.env.production'});
+if (process.env.NODE_ENV === 'production') {
+    dotenv.config({ path: '.env.production' });
 } else {
-    dotenv.config({path: '.env.development'})
+    dotenv.config({ path: '.env.development' })
 }
 
 const ENV = process.env.NODE_ENV ?? 'development';
 
 
-const CONFIG:TConfig = {
+const CONFIG: TConfig = {
 
-   development : {
+    development: {
 
-    app: {
-        PORT: process.env.PORT || 5001,
-    
-   },
+        app: {
+            PORT: process.env.PORT || 5001,
 
-   db: {
-    URI: process.env.MONGO_DB_URI || "mongodb://127.0.0.1:27017/express"
-}
-},
+        },
 
-   production : {
-
-    app: {
-
-        PORT: process.env.PORT || 5001,
+        db: {
+            URI: process.env.MONGO_DB_URI || "mongodb://127.0.0.1:27017/express"
+        }
     },
 
+    production: {
 
-    db: {
-        URI: process.env.MONGO_DB_URI || "mongodb://127.0.0.1:27017/express"
-    }
-   },
+        app: {
+
+            PORT: process.env.PORT || 5001,
+        },
+
+        db: {
+            URI: process.env.MONGO_DB_URI || "mongodb://127.0.0.1:27017/express"
+        }
+    },
 }
 
 export default CONFIG[ENV];

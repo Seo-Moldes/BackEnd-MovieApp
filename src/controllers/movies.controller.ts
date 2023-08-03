@@ -19,12 +19,8 @@ export const createMovie = async (req: Request, res: Response) => {
     } catch (error) {
 
         res.status(500).send(error);
-
     }
-
-
 };
-
 
 export const removeMovieByID = async (req: Request, res: Response) => {
 

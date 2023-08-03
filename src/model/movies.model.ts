@@ -19,7 +19,8 @@ const MoviesSchema = new Schema<IMoviesDocument>({
 
     year: {
 
-        type: Number
+        type: Number,
+        required: [true, "year is required"]
     },
 
     score: {

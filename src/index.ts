@@ -11,7 +11,5 @@ connect().then(async function onServerStart() {
         console.log(`Server is listening on ports ${PORT}`);
 
     })
-
-
 })
 

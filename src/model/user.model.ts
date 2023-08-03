@@ -25,7 +25,6 @@ const UserSchema = new Schema<IUserDocument>({
         type: String,
         required: [true, "email is required"],
         unique: true
-
     },
 
     password: {
@@ -56,7 +55,6 @@ UserSchema.pre("save", async function (next) {
     next();
 
 });
-
 
 //modelo que se exporta para que los controladores funcionen
 const UserModel = model<IUserDocument>("User", UserSchema);

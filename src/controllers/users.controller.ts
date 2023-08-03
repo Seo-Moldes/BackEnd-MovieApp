@@ -20,7 +20,7 @@ export const createUser = async (req: Request, res: Response) => {
 
     }
 
-    // res.status(200).send({ msg: "User Created" });
+   
 
 };
 
@@ -39,8 +39,7 @@ export const removeUserByID = async (req: Request, res: Response) => {
         res.status(500).send(error);
 
     }
-
-    // res.status(200).send({ msg: "Deleted" })
+    
 }
 
 export const getAllUsers = async (req: Request, res: Response) => {
@@ -54,8 +53,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
         res.status(500).send(error);
 
     }
-    // res.status(200).send({ msg: "All Users" })
-
+    
 }
 
 export const getUserByID = async (req: Request, res: Response) => {
