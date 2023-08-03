@@ -17,13 +17,8 @@ export const createUser = async (req: Request, res: Response) => {
     } catch (error) {
 
         res.status(500).send(error);
-
     }
-
-   
-
 };
-
 
 export const removeUserByID = async (req: Request, res: Response) => {
 
@@ -39,7 +34,6 @@ export const removeUserByID = async (req: Request, res: Response) => {
         res.status(500).send(error);
 
     }
-    
 }
 
 export const getAllUsers = async (req: Request, res: Response) => {
@@ -51,9 +45,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
     } catch (error) {
 
         res.status(500).send(error);
-
     }
-    
 }
 
 export const getUserByID = async (req: Request, res: Response) => {
@@ -68,9 +60,7 @@ export const getUserByID = async (req: Request, res: Response) => {
     } catch (error) {
 
         res.status(500).send(error);
-
     }
-
 }
 
 export const updateUserByID = async (req: Request, res: Response) => {
@@ -90,11 +80,8 @@ export const updateUserByID = async (req: Request, res: Response) => {
 
         res.status(201).send(user);
 
-
     } catch (error) {
 
         res.status(500).send(error);
-
     }
-
 }

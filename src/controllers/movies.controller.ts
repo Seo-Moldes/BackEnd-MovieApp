@@ -21,9 +21,19 @@ export const createMovie = async (req: Request, res: Response) => {
         res.status(500).send(error);
     }
 };
-
+/////////////////////
 export const removeMovieByID = async (req: Request, res: Response) => {
 
+    // const {name, year, score} = req.body;
+    // const {userID} = req.params;
+
+    // try {
+    
+    //     const deleteMovie = await MoviesModel
+    
+    // } catch (error) {
+        
+    // }
   
 }
 
