@@ -5,6 +5,7 @@ interface IMoviesDocument extends Document {
     name: string;
     year: number;
     score: number;
+    genre: string;
     createAt: Date;
     updatedAt: Date
 }
@@ -26,6 +27,12 @@ const MoviesSchema = new Schema<IMoviesDocument>({
     score: {
 
         type: Number,
+        required: [true, "score is required"]
+    },
+
+    genre: {
+
+        type: String,
         required: [true, "score is required"]
     },
 },

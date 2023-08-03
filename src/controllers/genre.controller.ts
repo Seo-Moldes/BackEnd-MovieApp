@@ -49,16 +49,10 @@ export const updateGenreByID = async (req: Request, res: Response) => {
     const { genreID } = req.params;
     const { name } = req.body;
 
-   
+
     try {
 
-        const genre = await GenreModel.findByIdAndUpdate({genreID}, {
-            
-            name
-        }, {
-
-            new: true
-        })
+        const genre = await GenreModel.findByIdAndUpdate({ genreID }, { name }, { new: true })
 
         res.status(200).send(genre)
 

@@ -34,7 +34,7 @@ export const removeUserByID = async (req: Request, res: Response) => {
         res.status(500).send(error);
 
     }
-}
+};
 
 export const getAllUsers = async (req: Request, res: Response) => {
 
@@ -46,7 +46,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
 
         res.status(500).send(error);
     }
-}
+};
 
 export const getUserByID = async (req: Request, res: Response) => {
 
@@ -61,7 +61,7 @@ export const getUserByID = async (req: Request, res: Response) => {
 
         res.status(500).send(error);
     }
-}
+};
 
 export const updateUserByID = async (req: Request, res: Response) => {
 
@@ -70,13 +70,7 @@ export const updateUserByID = async (req: Request, res: Response) => {
 
     try {
 
-        const user = await UserModel.findByIdAndUpdate({ _id: userID }, {
-
-            $set: { name, email, password }
-        }, {
-
-            new: true,
-        })
+        const user = await UserModel.findByIdAndUpdate({ _id: userID }, { $set: { name, email, password } }, { new: true, })
 
         res.status(201).send(user);
 
@@ -84,4 +78,4 @@ export const updateUserByID = async (req: Request, res: Response) => {
 
         res.status(500).send(error);
     }
-}
+};

@@ -5,7 +5,7 @@ import { check } from "../middleware/check.middleware";
 const MoviesRouter = Router();
 
 MoviesRouter
-.post("/:userID", check, createMovie)
+.post("/", check, createMovie)
 .get("/", getAllMovies)
 .get("/:movieID", getMovieById)
 .delete("/:movieID", removeMovieByID)
